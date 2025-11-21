@@ -1,31 +1,60 @@
-<!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Multiplication Table Generator</title>
-   <link rel="stylesheet" href="Assignment1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Analytics Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
 <body>
-   <h1>Multiplication Table</h1>
-   <img src="Banner.jpg" alt="Banner Image" width="320px" height="180px">
-   <div class="controls">
-       <label for="rows">Rows:</label>
-       <input type="number" id="rows" value="10" min="1">
-       <label for="cols">Columns:</label>
-       <input type="number" id="cols" value="10" min="1">
-       <button onclick="drawTable()">Generate Table</button>
-   </div>
-   <div id="tableContainer"></div>
-   <footer>
-       <p>&copy; Bat An Dinh COMP125/Sec.003</p>
-   </footer>
-   <script src="Assignment1.js"></script>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Programming Language Analytics Dashboard</h1>
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiMzNDk4ZGIiLz4KPHN2ZyB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMiAxNWwtNS01IDEuNDEtMS40MUwxMCAxNC4xN2w3LjU5LTcuNTlMMTkgOGwtOSA5eiIvPgo8L3N2Zz4KPC9zdmc+" alt="Dashboard Icon">
+            <p>Advanced Data Processing & Visualization Tool</p>
+        </div>
+        
+        <div class="two-column">
+            <div class="section">
+                <h2>📊 Part 1: CSV to JSON Converter</h2>
+                <div class="upload-area">
+                    <p>📁 Upload your CSV file here</p>
+                    <input type="file" id="csvFile" class="file-input" accept=".csv">
+                    <button class="upload-btn" onclick="document.getElementById('csvFile').click()">
+                        Choose CSV File
+                    </button>
+                    <div id="fileMessage"></div>
+                </div>
+                
+                <div id="tableContainer" style="display: none;">
+                    <h3>📋 Data Preview:</h3>
+                    <table id="dataTable" class="data-table"></table>
+                </div>
+                
+                <div id="chartContainer" style="display: none;">
+                    <h3>📈 Data Visualization:</h3>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>☁️ Part 2: Word Cloud Generator</h2>
+                <input type="text" id="urlInput" class="url-input" placeholder="Enter a URL (e.g., https://en.wikipedia.org/wiki/Artificial_intelligence)">
+                <button class="upload-btn" onclick="generateWordCloud()">Generate Word Cloud</button>
+                <div id="urlMessage"></div>
+                
+                <div id="wordCloudContainer" class="word-cloud">
+                    <p style="color: #7f8c8d;">Enter a URL above to generate a word cloud</p>
+                </div>
+            </div>
+        </div>
+        >
+        <div class="footer">
+            <p>© 2025 Programming Language Analytics Dashboard | COMP125 Assignment 4 | Created with ❤️ for educational purposes</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
-
 </html>
